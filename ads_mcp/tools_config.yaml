@@ -9,3 +9,4 @@ namespaces:
   metadata: true
   labels: true
   assets: true
+  campaigns: true
