@@ -36,6 +36,7 @@ class TestToolsMounting(unittest.IsolatedAsyncioTestCase):
                     "metadata": True,
                     "labels": True,
                     "assets": True,
+                    "campaigns": True,
                 }
             }
         )
@@ -54,6 +55,9 @@ class TestToolsMounting(unittest.IsolatedAsyncioTestCase):
         self.assertIn("labels_manage_label_associations", tool_names)
         self.assertIn("assets_create_asset", tool_names)
         self.assertIn("assets_upload_video_asset", tool_names)
+        self.assertIn("campaigns_set_campaign_status", tool_names)
+        self.assertIn("campaigns_update_campaign_daily_budget", tool_names)
+        self.assertIn("campaigns_create_paused_campaign", tool_names)
 
     @patch("ads_mcp.config.ToolsConfig.load")
     async def test_mounting_disabled_namespaces(self, mock_load):
